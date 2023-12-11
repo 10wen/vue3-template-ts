@@ -1,14 +1,10 @@
+<script setup lang="ts">
+import MainLayout from './MainLayout.vue';
+</script>
 <template>
   <div>
-    <router-view></router-view>
+    <MainLayout />
   </div>
 </template>
 
-<script setup lang="ts">
 
-
-</script>
-
-<style scoped>
-
-</style>

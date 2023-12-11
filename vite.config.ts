@@ -1,10 +1,37 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import path, { resolve } from "path"
+import VueSetupExtend from "vite-plugin-vue-setup-extend";
+import basicSsl from "@vitejs/plugin-basic-ssl";
+import AutoImport from "unplugin-auto-import/vite";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import svgLoader from "vite-svg-loader";
+import { createRequire } from "module";
+import ckeditor5 from "@ckeditor/vite-plugin-ckeditor5";
+const require = createRequire(import.meta.url);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    VueSetupExtend(),
+    // basicSsl(),
+    /** 将 SVG 静态图转化为 Vue 组件 */
+    svgLoader({ defaultImport: "url" }),
+    /** SVG */
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), "src/icons/svg")],
+      symbolId: "icon-[dir]-[name]",
+    }),
+    AutoImport({
+      imports: [
+        "vue",
+        "vue-router",
+        "pinia"
+      ],
+    }),
+    ckeditor5({ theme: require.resolve("@ckeditor/ckeditor5-theme-lark") }),
+  ],
   base: './',
   resolve: {
     alias: {
@@ -13,6 +40,7 @@ export default defineConfig({
     }
   },
   server: {
+    hmr: true,
     // https: true, // 是否开启 HTTPS
     host: "0.0.0.0",
     port: 8090, // 端口号

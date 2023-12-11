@@ -10,6 +10,8 @@
 @import "./theme/register.scss";
 // mixin
 @import "./mixins.scss";
+// ckeditor
+@import "./ckeditor.scss";
 
 
 // 业务页面几乎都应该在根元素上挂载 class="app-container"，以保持页面美观
@@ -51,4 +53,148 @@ a:hover {
 
 div:focus {
   outline: none;
+}
+
+
+// 页面主容器
+.page-wrapper {}
+.flex-1 {
+  flex: 1;
+}
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+.col-flex {
+  display: flex;
+  flex-direction: column;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.flex-1 {
+  flex: 1;
+}
+.col-reverse {
+  flex-direction: column-reverse;
+}
+
+
+// padding
+.p-t-20 {
+  padding-top: 20px;
+}
+.p-x-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.p-y-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.p-x-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.p-y-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// margin
+.m-auto {
+  margin: auto;
+}
+.m-r-0 {
+  margin-right: 0;
+}
+.m-t-20 {
+  margin-top: 20px;
+}
+.m-b-20 {
+  margin-bottom: 20px;
+}
+.m-t-10 {
+  margin-top: 10px;
+}
+.m-t-20 {
+  margin-top: 20px;
+}
+.m-b-10 {
+  margin-bottom: 10px;
+}
+.m-b-20 {
+  margin-bottom: 20px;
+}
+.m-y-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.m-x-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.m-l-10 {
+  margin-left: 10px;
+}
+.m-r-10 {
+  margin-right: 10px;
+}
+.m-t-15 {
+  margin-top: 15px;
+}
+.m-r-15 {
+  margin-right: 15px;
+}
+.m-l-20 {
+  margin-left: 20px;
+}
+.m-r-20 {
+  margin-right: 20px;
+}
+.m-r-5 {
+  margin-right: 5px;
+}
+
+
+// font 
+.f-w-b {
+  font-weight: bold;
+}
+
+// float
+.float-right {
+  float: right;
+  top: 0;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+
+// position
+.relative {
+  position: relative;
+}
+.absolute-right {
+  position: absolute;
+  right: 0;
+}
+
+.break-word {
+  overflow-wrap: break-word !important;
 }

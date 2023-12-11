@@ -42,6 +42,7 @@
     "src/**/**/*.vue",
     "types/**/*.d.ts",
     "vite.config.ts",
+    "./auto-imports.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }],
   /** 编译器默认排除的编译文件 */
