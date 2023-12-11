@@ -33,3 +33,17 @@ export const setCssVariableValue = (cssVariableName: string, cssVariableValue: s
     console.error(error)
   }
 }
+
+export const createFileToExport = (data: any, fileName:string) => {
+  const type = data.contentType;
+  const url = window.URL.createObjectURL(
+    new Blob([data.data], {
+      type: type
+    })
+  );
+  const link = document.createElement("a");
+  link.href = url;
+  link.setAttribute("download", fileName || data.fileName);
+  document.body.appendChild(link);
+  link.click();
+}
