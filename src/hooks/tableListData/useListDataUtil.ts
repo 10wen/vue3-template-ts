@@ -1,5 +1,5 @@
 import { BaseTableResponse, BaseTableRequest } from "@/api/api.config";
-import { usePagination } from "./pagination/usePagination";
+import { usePagination } from "../pagination/usePagination";
 
 interface PaginationData {
   total?: number;
