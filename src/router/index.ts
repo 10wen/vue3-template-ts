@@ -72,7 +72,7 @@ const router = createRouter({
 });
 
 /** 免登录白名单 */
-const whiteList = ["/login"];
+const whiteList = ["/login", "/dashboard"];
 
 /**
  * to:   即将要进入的目标
